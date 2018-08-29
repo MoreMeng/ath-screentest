@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Monitor Calibration Graphic V2.0</title>
+    <title>Monitor Calibration Graphic</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-+ENW/yibaokMnme+vBLnHMphUYxHs34h9lpdbSLuAwGkOKFRl4C34WkjazBtb7eT"
@@ -198,7 +198,7 @@
                 
                 
                 $.ajax({
-                url: "insert1.php?score="+numCorrect+"&name="+namee.value+"&monitor="+monitor.value+"&section="+section.value,
+                url: "insert.php?score="+numCorrect+"&name="+namee.value+"&monitor="+monitor.value+"&section="+section.value,
                 type: 'post',
                 dataType: 'html'
                 });
