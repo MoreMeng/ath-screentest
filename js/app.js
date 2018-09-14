@@ -92,7 +92,7 @@ $('#submit').on('click', function (e) {
                 button: false
             })
             .then(() => {
-                window.location.href = "./";
+                window.location.href = "../";
             });
 
     }).fail(function (data) {
