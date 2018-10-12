@@ -1,40 +1,35 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
 
-include 'connect.php';
+if (empty($_POST['section']) || empty($_POST['name'])) {
+    http_response_code(400);
+    echo "ข้อมูลไม่เพียงพอ";
+    print_r($_POST);
+    exit;
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-$name = mysqli_real_escape_string($conn, $_GET['name']);
-$section = mysqli_real_escape_string($conn, $_GET['section']);
-$monitor = mysqli_real_escape_string($conn, $_GET['monitor']);
-$score = mysqli_real_escape_string($conn, $_GET['score']);
+    require '../dv-config.php';
+    require DEV_PATH . '/classes/db.class.v2.php';
+    require DEV_PATH . '/functions/global.php';
 
-function getUserIpAddr(){
-    if(!empty($_SERVER['HTTP_CLIENT_IP'])){
-        //ip from share internet
-        $ip = $_SERVER['HTTP_CLIENT_IP'];
-    }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
-        //ip pass from proxy
-        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    }else{
-        $ip = $_SERVER['REMOTE_ADDR'];
+    $arr = array(
+        'name' => $_POST['name'],
+        'monitor' => $_POST['monitor'],
+        'section' => $_POST['section'],
+        'ip' => $_SERVER['REMOTE_ADDR'],
+        'date' => date('Y-m-d H:i:s'),
+        'score' => $_POST['score']
+    );
+    $sql = "INSERT INTO " . TB_PREFIX . "screentest VALUES ( '', :name, :section, :monitor, :ip, :date, :score)";
+    try {
+        CON::updateDB($arr, $sql, true);
+        echo 'บันทึกข้อมูลแล้ว';
+        http_response_code(200);
+
+    } catch (Exception $e) {
+        echo 'ไม่สามารถบันทึกข้อมูลได้' . $e;
+        http_response_code(403);
     }
-    return $ip;
 }
-$IP_Address = getUserIpAddr();
-
-$date = date("Y-m-d");
-// date_default_timezone_set("asia/bangkok");
-// $time = date("H:i:s");
-
-echo $IP_Address.'<br>'.$date.'<br>';
-
-$sql = "INSERT INTO quiz (Name,Monitor,Section,IP_Address,Date,Score)
-VALUES ('$name','$monitor','$section','$IP_Address', '$date','$score')";
-
-if (mysqli_query($conn, $sql)) {
-    echo "successfully";
-} else {
-    echo "Error";
-}
-
-mysqli_close($conn);
 ?>
