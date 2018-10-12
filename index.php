@@ -55,15 +55,15 @@ define('Q_VERSION', '1.0.0');
                 <form action="" method="POST" class="form-horizontal" role="form">
                     <div class="form-group">
                         <label for="name">Name:</label>
-                        <input class="form-control" type="text" id="name" name="name" placeholder="ชื่อ-นามสกุล ผู้ทำการทดสอบ">
+                        <input class="form-control" type="text" id="name" name="name" placeholder="ชื่อ-นามสกุล ผู้ทำการทดสอบ" required>
                     </div>
                     <div class="form-group">
                         <label for="monitor">Monitor:</label>
-                        <input class="form-control" type="text" id="monitor" name="monitor" placeholder="ยี่ห้อ รุ่น ของหน้าจอ ตัวอย่าง: Acer X193HQ A">
+                        <input class="form-control" type="text" id="monitor" name="monitor" placeholder="ยี่ห้อ รุ่น ของหน้าจอ ตัวอย่าง: Acer X193HQ A" required>
                     </div>
                     <div class="form-group">
                         <label for="section">Section:</label>
-                        <select data-placeholder="เลือกหน่วยงาน" class="form-control select2" name="section" id="section">
+                        <select data-placeholder="เลือกหน่วยงาน" class="form-control select2" name="section" id="section" required>
                         <option></option>
                                 <?php
                             // foreach ($da_section as $row) {
@@ -107,10 +107,10 @@ define('Q_VERSION', '1.0.0');
                         <label for="monitor">ใช้หน้าจอนี้สำหรับดูผล xray หรือไม่?</label>
                         <div class="btn-group btn-block" data-toggle="buttons">
                         <label class="btn btn-success">
-                            <input type="radio" name="xray" id="y" autocomplete="off"> ใช้
+                            <input type="radio" name="xray" id="y" autocomplete="off" required> ใช้
                         </label>
                         <label class="btn btn-danger">
-                            <input type="radio" name="xray" id="n" autocomplete="off"> ไม่ใช้
+                            <input type="radio" name="xray" id="n" autocomplete="off" required> ไม่ใช้
                         </label>
                     </div>
                     </div>
