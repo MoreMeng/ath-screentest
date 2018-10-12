@@ -17,11 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'name' => $_POST['name'],
         'monitor' => $_POST['monitor'],
         'section' => $_POST['section'],
+        'xray' => $_POST['xray'],
         'ip' => $_SERVER['REMOTE_ADDR'],
         'date' => date('Y-m-d H:i:s'),
         'score' => $_POST['score']
     );
-    $sql = "INSERT INTO " . TB_PREFIX . "screentest VALUES ( '', :name, :section, :monitor, :ip, :date, :score)";
+    $sql = "INSERT INTO " . TB_PREFIX . "screentest VALUES ( '', :name, :section, :xray, :monitor, :ip, :date, :score)";
     try {
         CON::updateDB($arr, $sql, true);
         echo 'บันทึกข้อมูลแล้ว';

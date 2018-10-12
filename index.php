@@ -104,6 +104,17 @@ define('Q_VERSION', '1.0.0');
                         </select>
                     </div>
                     <div class="form-group">
+                        <label for="monitor">ใช้หน้าจอนี้สำหรับดูผล xray หรือไม่?</label>
+                        <div class="btn-group btn-block" data-toggle="buttons">
+                        <label class="btn btn-success">
+                            <input type="radio" name="xray" id="y" autocomplete="off"> ใช้
+                        </label>
+                        <label class="btn btn-danger">
+                            <input type="radio" name="xray" id="n" autocomplete="off"> ไม่ใช้
+                        </label>
+                    </div>
+                    </div>
+                    <div class="form-group">
                         <div class="text-center">
                             <button id="submit" type="button" class="btn btn-primary">บันทึกผลการทดสอบ</button>
                         </div>
