@@ -15,8 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $arr = array(
         'name' => $_POST['name'],
-        'monitor' => $_POST['monitor'],
         'section' => $_POST['section'],
+        'monitor' => $_POST['monitor'],
         'xray' => $_POST['xray'],
         'ip' => $_SERVER['REMOTE_ADDR'],
         'date' => date('Y-m-d H:i:s'),
