@@ -1,7 +1,8 @@
 <?php
-session_start();
 error_reporting(0);
 // error_reporting(E_ERROR | E_WARNING | E_PARSE);
+if ($_COOKIE['XRAY']==1)
+    header('Location: ../');
 
 require realpath('../dv-config.php');
 require DEV_PATH . '/classes/db.class.v2.php';
@@ -10,7 +11,6 @@ require DEV_PATH . '/functions/global.php';
 $GET_DEV = (empty($_GET['dev'])) ? null : $_GET['dev'];
 
 define('Q_VERSION', '1.0.0');
-
 ?>
 
 <!DOCTYPE html>

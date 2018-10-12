@@ -8,6 +8,7 @@ if (empty($_POST['section']) || empty($_POST['name'])) {
     exit;
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    setcookie('XRAY', 1, time() + 30, "/");
 
     require '../dv-config.php';
     require DEV_PATH . '/classes/db.class.v2.php';
