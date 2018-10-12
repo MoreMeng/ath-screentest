@@ -1,12 +1,12 @@
 'use strict';
 const questions = [{
     question: "เห็นวงกลมในรูปกี่วง",
-    choices: ["3 วง", "4 วง"],
-    correctAnswer: 1
+    choices: ["1 วง","2 วง","3 วง", "4 วง","5 วง"],
+    correctAnswer: 3
 }, {
     question: "เห็นวงกลมในรูปกี่วง",
-    choices: ["3 วง", "4 วง"],
-    correctAnswer: 1
+    choices: ["1 วง","2 วง","3 วง", "4 วง","5 วง"],
+    correctAnswer: 3
 }, {
     question: "เฉดสีเรียงกันสม่ำเสมอหรือไม่",
     choices: ["ใช่", "ไม่ใช่"],
