@@ -77,6 +77,7 @@ $('#submit').on('click', function (e) {
         score: numCorrect,
         name: $('#name').val(),
         monitor: $('#monitor').val(),
+        xray: $('#xray').val(),
         section: $('#section').val()
     }, function () {
 
