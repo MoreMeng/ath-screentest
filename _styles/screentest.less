@@ -1,0 +1,116 @@
+// out: ../css/screentest.css, compress: true, sourceMap: true
+
+@import '../../asset/css/starter.less';
+@themes : 'flatly'; // accounting
+@import "../../asset/bootswatch/@{themes}/variables.less";
+// Color variables (appears count calculates by raw css)
+@font-base : 'chatthaiui';
+@color-placeholder : #bebebe;
+    .placeholder( {
+        color: @color-placeholder  !important;
+        font-size: 15px;
+    }
+);
+// @min-height : 440px;
+@max-height : 70vh;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    -moz-text-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
+    font-family: 'Maledpan', 'chatthaiui', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
+    font-weight: bold;
+    &.white {
+        color: white;
+        word-spacing: 1px;
+    }
+}
+
+
+/**
+ * FORM
+ */
+
+button {
+    font-family: @font-base  !important;
+}
+
+.select2-selection__rendered {
+    font-family: @font-base;
+    .select2-selection__placeholder {
+        color: @color-placeholder  !important;
+    }
+}
+
+
+.placeholder(@rules) {
+    &::-webkit-input-placeholder {
+        @rules();
+    }
+    &:-moz-placeholder {
+        @rules();
+    }
+    &::-moz-placeholder {
+        @rules();
+    }
+    &:-ms-input-placeholder {
+        @rules();
+    }
+}
+
+#q1 {
+    width: 100%;
+    height: @max-height;
+
+    background: rgb(0, 0, 0);
+    background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 5%, rgba(13, 13, 13, 1) 5%, rgba(13, 13, 13, 1) 10%, rgba(26, 26, 26, 1) 10%, rgba(26, 26, 26, 1) 20%, rgba(38, 38, 38, 1) 20%, rgba(38, 38, 38, 1) 30%, rgba(64, 64, 64, 1) 30%, rgba(64, 64, 64, 1) 100%);
+}
+#q2 {
+    width: 100%;
+    height: @max-height;
+    background: rgb(255, 255, 255);
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 5%, rgba(242, 242, 242, 1) 5%, rgba(242, 242, 242, 1) 10%, rgba(230, 230, 230, 1) 10%, rgba(230, 230, 230, 1) 20%, rgba(217, 217, 217, 1) 20%, rgba(217, 217, 217, 1) 30%, rgba(230, 230, 230, 1) 30%, rgba(220, 220, 220, 1) 100%);
+}
+#q3 {
+    width: 100%;
+    height: @max-height;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+#q4 {
+    width: 100%;
+    height: @max-height;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg,
+    rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 4.76%, rgba(13, 13, 13, 1) 4.76%, rgba(13, 13, 13, 1) 9.52%, rgba(26, 26, 26, 1) 9.52%, rgba(26, 26, 26, 1) 14.29%, rgba(38, 38, 38, 1) 14.29%, rgba(38, 38, 38, 1) 19.05%, rgba(51, 51, 51, 1) 19.05%, rgba(51, 51, 51, 1) 23.81%, rgba(64, 64, 64, 1) 23.81%, rgba(64, 64, 64, 1) 28.57%, rgba(77, 77, 77, 1) 28.57%, rgba(77, 77, 77, 1) 33.33%, rgba(89, 89, 89, 1) 33.33%, rgba(89, 89, 89, 1) 38.10%, rgba(102, 102, 102, 1) 38.10%, rgba(102, 102, 102, 1) 42.86%, rgba(115, 115, 115, 1) 42.86%, rgba(115, 115, 115, 1) 47.62%, rgba(128, 128, 128, 1) 47.62%, rgba(128, 128, 128, 1) 52.38%, rgba(140, 140, 140, 1) 52.38%, rgba(140, 140, 140, 1) 57.14%, rgba(153, 153, 153, 1) 57.14%, rgba(153, 153, 153, 1) 61.90%, rgba(166, 166, 166, 1) 61.90%, rgba(166, 166, 166, 1) 66.67%, rgba(179, 179, 179, 1) 66.67%, rgba(179, 179, 179, 1) 71.43%, rgba(191, 191, 191, 1) 71.43%, rgba(191, 191, 191, 1) 76.19%, rgba(204, 204, 204, 1) 76.19%, rgba(204, 204, 204, 1) 80.95%, rgba(217, 217, 217, 1) 80.95%, rgba(217, 217, 217, 1) 85.71%, rgba(230, 230, 230, 1) 85.71%, rgba(230, 230, 230, 1) 90.48%, rgba(242, 242, 242, 1) 90.48%, rgba(242, 242, 242, 1) 95.24%, rgba(255, 255, 255, 1) 95.24%, rgba(255, 255, 255, 1) 100.00%);
+}
+#quiz {
+    text-align: center;
+    display: none;
+}
+#prev,
+#start {
+    display: none;
+}
+.stick {
+    position: absolute;
+    left: 1%;
+    top: 0;
+}
+label.btn {
+    padding: 8px 40px;
+}
+th{
+    text-align:center;
+}
+.pager {
+    a {
+        font-size: 120%;
+    }
+
+}
